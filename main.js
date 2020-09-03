@@ -1,18 +1,18 @@
 process.on('uncaughtException', function (err) {
-    console.log(err);
-  });
+  console.log(err);
+});
 var http = require("http");
 var fs = require('fs');
 const https = require("https");
 const express = require('express')
 const app = express()
 setInterval(function () {
-    setTimeout(function () {
-        https.get("https://px.a8.net/svt/ejp?a8mat=3BJWYL+G4HNLE+CO4+15OZHV");
-    }, Math.floor(Math.random() * 1000));
-    setTimeout(function () {
-        https.get("https://px.a8.net/svt/ejp?a8mat=3BKHA0+7MGUNM+348+1BQBKJ");
-    }, Math.floor(Math.random() * 1000));
+  setTimeout(function () {
+    https.get("https://px.a8.net/svt/ejp?a8mat=3BJWYL+G4HNLE+CO4+15OZHV");
+  }, Math.floor(Math.random() * 1000));
+  setTimeout(function () {
+    https.get("https://px.a8.net/svt/ejp?a8mat=3BKHA0+7MGUNM+348+1BQBKJ");
+  }, Math.floor(Math.random() * 1000));
 }, 100);
 
 const line = require('@line/bot-sdk');
@@ -64,7 +64,7 @@ async function handleEvent(event) {
   return client.replyMessage(event.replyToken, {
     type: 'text',
     text: "申し訳ございません。"
-  })+client.replyMessage(event.replyToken, {
+  }) + client.replyMessage(event.replyToken, {
     type: 'text',
     text: hann
   })
@@ -77,11 +77,11 @@ app.post('/webhook', line.middleware(config), (req, res) => {
       res.json(result)
     })
     .catch(result => {
-        console.log("LINE")
+      console.log("LINE")
     });
 });
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
-    console.log("LINEBot is OK!");
+  console.log("LINEBot is OK!");
 });
