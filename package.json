@@ -1,0 +1,13 @@
+{
+  "name": "lainan-line",
+  "version": "1.0.7",
+  "description": "チャットボット",
+  "main": "server.js",
+  "dependencies": {
+    "@line/bot-sdk": "^7.0.0",
+    "request": "^2.88.2"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
