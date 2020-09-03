@@ -63,13 +63,6 @@ async function handleEvent(event) {
       text: han.reaction
     });
   };
-  return client.replyMessage(event.replyToken, {
-    type: 'text',
-    text: "申し訳ございません。"
-  }) + client.replyMessage(event.replyToken, {
-    type: 'text',
-    text: hann
-  })
 }
 
 app.get("/", function (req, res) {
