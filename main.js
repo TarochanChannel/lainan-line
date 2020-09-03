@@ -43,7 +43,6 @@ async function handleEvent(event) {
   };
   console.log(event.message.text)
   function lainan() {
-    console.log("aa")
     return new Promise((resolve, reject) => {
       request(la(event.message.text), function (error, response, body) {
         if (error || !body) {
@@ -55,6 +54,7 @@ async function handleEvent(event) {
     });
   };
   const han = await lainan()
+  console.log("aaaa")
   var hann
   if (!han) hann = "APIと通信出来ませんでした。\n\nこのようなメッセージが繰り返される場合は、管理者にお問い合わせください。";
   if (han.responder != "None") {
