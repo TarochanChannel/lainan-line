@@ -70,6 +70,10 @@ async function handleEvent(event) {
   })
 }
 
+app.get("/", function (req, res) {
+  res.end("");
+});
+
 app.post('/webhook', line.middleware(config), (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
