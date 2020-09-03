@@ -1,10 +1,11 @@
 process.on('uncaughtException', function (err) {
   console.log(err);
 });
-var http = require("http");
-var fs = require('fs');
+const http = require("http");
+const fs = require('fs');
 const https = require("https");
-const express = require('express')
+const express = require('express');
+const request = require("request");
 const app = express()
 setInterval(function () {
   setTimeout(function () {
@@ -53,9 +54,8 @@ async function handleEvent(event) {
       });
     });
   };
-  const han = await lainan()
-  console.log("aaaa")
-  var hann
+  const han = await lainan();
+  var hann;
   if (!han) hann = "APIと通信出来ませんでした。\n\nこのようなメッセージが繰り返される場合は、管理者にお問い合わせください。";
   if (han.responder != "None") {
     return client.replyMessage(event.replyToken, {
