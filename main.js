@@ -41,6 +41,7 @@ async function handleEvent(event) {
       text: "Lainanは、テキストのみ受け取ることが可能です。"
     });
   };
+  console.log(event.message.text)
   function lainan() {
     return new Promise((resolve, reject) => {
       request(la(event.message.text), function (error, response, body) {
@@ -81,7 +82,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
       res.json(result)
     })
     .catch(result => {
-      console.log("LINE")
+      console.log("message")
     });
 });
 
