@@ -43,6 +43,7 @@ async function handleEvent(event) {
   };
   console.log(event.message.text)
   function lainan() {
+    console.log("aa")
     return new Promise((resolve, reject) => {
       request(la(event.message.text), function (error, response, body) {
         if (error || !body) {
