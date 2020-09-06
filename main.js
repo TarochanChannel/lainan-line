@@ -34,10 +34,7 @@ const config = {
 const client = new line.Client(config);
 async function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
-    return client.replyMessage(event.replyToken, {
-      type: 'text',
-      text: "申し訳ございません。\nLainanは、テキストのみ受け取ることが可能です。"
-    })
+    return
   };
   console.log(event.message.text)
   function lainan() {
