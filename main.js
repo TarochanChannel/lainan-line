@@ -54,7 +54,7 @@ async function handleEvent(event) {
   const han = await lainan();
   var hann;
   if (!han) hann = "APIと通信出来ませんでした。\n\nこのようなメッセージが繰り返される場合は、管理者にお問い合わせください。";
-  if (han.responder != "None") {
+  if (han.responder != "None"&&han.responder != "Wikipedia") {
     return client.replyMessage(event.replyToken, {
       type: 'text',
       text: han.reaction
